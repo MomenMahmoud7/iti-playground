@@ -1,25 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import Button from './components/Button/Button';
+import Header from './components/Header/Header';
 
-function App() {
+const App = ({ title }) => {
+  const newTitle = title + 'Session';
+  console.log(window);
+
+  const handleClick = () => {
+    console.log(newTitle);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>{newTitle}</h1>
+      <Header />
+      <Button
+        text="Don't Click Here"
+        type="button"
+        color="grey"
+        handleOnClick={handleClick}
+      />
     </div>
   );
-}
+};
 
 export default App;
